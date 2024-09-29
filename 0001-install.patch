@@ -1,0 +1,48 @@
+From 8472878252344c540c959282d71967787bf42734 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 14 Sep 2024 16:03:49 +0800
+Subject: [PATCH] install
+
+---
+ stock/desktop/Stock.desktop | 11 +++++++++++
+ stock/desktop/desktop.pro   |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 stock/desktop/Stock.desktop
+
+diff --git a/stock/desktop/Stock.desktop b/stock/desktop/Stock.desktop
+new file mode 100644
+index 0000000..f8c1fd7
+--- /dev/null
++++ b/stock/desktop/Stock.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=Stock
++Name=Stock
++Name[zh_CN]=Stock
++Icon=Stock
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=Stock
++Version=1.0
+\ No newline at end of file
+diff --git a/stock/desktop/desktop.pro b/stock/desktop/desktop.pro
+index 0d94a21..6cf9bc8 100644
+--- a/stock/desktop/desktop.pro
++++ b/stock/desktop/desktop.pro
+@@ -88,3 +88,11 @@ FORMS += \
+     rename.ui \
+     edit_desc.ui \
+     amount.ui
++
++target.path = $$PREFIX/bin
++desktop.files = Stock.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = img/Stock.png
++
++INSTALLS += target desktop icons
+-- 
+2.43.4
+
